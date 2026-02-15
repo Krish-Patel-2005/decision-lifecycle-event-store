@@ -117,14 +117,3 @@ CREATE TRIGGER enforce_event_transition_trigger
 BEFORE INSERT ON decision_events
 FOR EACH ROW
 EXECUTE FUNCTION enforce_event_transition();
-
-
-DROP TRIGGER IF EXISTS enforce_event_transition_trigger ON decision_events;
-DROP TRIGGER IF EXISTS forbid_modification_trigger ON decision_events;
-DROP TRIGGER IF EXISTS enforce_single_open_decision_trigger ON decision_events;
-DROP TRIGGER IF EXISTS enforce_causal_index_order_trigger ON decision_events;
-DROP FUNCTION IF EXISTS enforce_event_transition();
-DROP FUNCTION IF EXISTS forbid_modification();
-DROP FUNCTION IF EXISTS enforce_single_open_decision();
-DROP FUNCTION IF EXISTS enforce_causal_index_order();
-DROP TABLE IF EXISTS decision_events;
